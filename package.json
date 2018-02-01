@@ -2,7 +2,7 @@
   "name": "spanner-snake",
   "version": "1.0.0",
   "description": "A stupid simple snek.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js",
