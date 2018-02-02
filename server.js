@@ -1,4 +1,45 @@
-console.log("Hello Spanner");
+var start = require('./app/start');
+var move = require('./app/move');
+
+//*************************************/
+
+// import http
+const http = require('http');
+// set port and port message
+const port = 3000;
+
+// create handler
+const requestHandler = (req, res) => {
+    //Check to be sure all requests are post only.
+    if (req.method !== 'POST') return res.end("Nice try. You can only have post requests.");
+
+    console.log("Requested URL:" + req.url);
+    if (req.url=='/start') {
+        console.log('Start.');
+
+        // Respond with start information
+        res.end(start());
+    } else if (req.url=='/move'){
+        console.log('Move.');
+        res.end(move());
+
+    } else {
+        console.log('Oops.');
+        res.end('Oops.');
+    }
+    res.end('Hello Node.js Server!');
+}
+
+// start server
+const server = http.createServer(requestHandler);
+
+// Set server to port
+server.listen(port, (err) => {
+    if (err) {
+        return console.log('something bad happened', err)
+    }
+    console.log(`server is listening on ${port}`)
+});
 // const http = require('http')
 
 // function start(game) {
@@ -15,25 +56,25 @@ console.log("Hello Spanner");
 //   }
 // }
 
-// /**
-//  * HTTP Server
-//  * Boilerplate server to receive and respond to POST requests
-//  * other requests will be returned immediately with no data
-//  */
+/**
+ * HTTP Server
+ * Boilerplate server to receive and respond to POST requests
+ * other requests will be returned immediately with no data
+ */
 // http.createServer((req, res) => {
-//   if (req.method !== 'POST') return respond(); // non-game requests
+//     if (req.method !== 'POST') return respond(); // non-game requests
 
-//   let body = [];
-//   req.on('data', chunk => body.push(chunk));
-//   req.on('end', () => {
-//     body = JSON.parse(Buffer.concat(body).toString());
-//     if (req.url === '/start') message = start(body);
-//     if (req.url === '/move') message = move(body);
-//     return respond(message);
-//   });
+//     let body = [];
+//     req.on('data', chunk => body.push(chunk));
+//     req.on('end', () => {
+//         body = JSON.parse(Buffer.concat(body).toString());
+//         if (req.url === '/start') message = start(body);
+//         if (req.url === '/move') message = move(body);
+//         return respond(message);
+//     });
 
-//   function respond(message) {
-//     res.setHeader('Content-Type', 'application/json');
-//     res.end(JSON.stringify(message));
-//   }
+//     function respond(message) {
+//         res.setHeader('Content-Type', 'application/json');
+//         res.end(JSON.stringify(message));
+//     }
 // }).listen(process.env.PORT || 80, console.error)
