@@ -16,11 +16,10 @@
   ],
   "author": "Curtis LayCraft",
   "license": "ISC",
-  "devDependencies": {
-    "nodemon": "1.14.12"
-  },
+  "devDependencies": {},
   "dependencies": {
-    "body-parser": "1.18.2"
+    "body-parser": "1.18.2",
+    "nodemon": "1.14.12"
   },
   "repository": {
     "type": "git",

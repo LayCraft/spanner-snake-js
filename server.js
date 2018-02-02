@@ -6,8 +6,7 @@ var move = require('./app/move');
 const http = require('http');
 
 // set port
-var port = process.env.PORT || 80; 
-
+var port = process.env.PORT || 3000; 
 
 // create handler
 const requestHandler = (req, res) => {
