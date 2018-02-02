@@ -1,12 +1,14 @@
 const bodyParser = require('body-parser');
-
 const start = require('./app/start');
 var move = require('./app/move');
 
 // import http
 const http = require('http');
+
 // set port and port message
-const port = 3000;
+var port = 3000;
+//pull port from run command
+if (process.argv.length==3) port = valueOf(process.argv[2]);
 
 // create handler
 const requestHandler = (req, res) => {
@@ -47,7 +49,7 @@ server.listen(port, (err) => {
     if (err) {
         return console.log('something bad happened', err)
     }
-    console.log(`server is listening on ${port}`)
+    console.log(`server is listening on ${port}`);
 });
 // const http = require('http')
 
