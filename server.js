@@ -1,8 +1,6 @@
 var start = require('./app/start');
 var move = require('./app/move');
 
-//*************************************/
-
 // import http
 const http = require('http');
 // set port and port message
@@ -15,19 +13,29 @@ const requestHandler = (req, res) => {
 
     console.log("Requested URL:" + req.url);
     if (req.url=='/start') {
-        console.log('Start.');
+        console.log('POST for starter snake info.');
+        var game_id = req;
+        console.log(game_id);
+        // collect starter information for the body of the response message
+        var body = start("Starter information");
+        //json encode and send back to user
+        res.end(JSON.stringify(body));
 
-        // Respond with start information
-        res.end(start());
     } else if (req.url=='/move'){
-        console.log('Move.');
-        res.end(move());
+        console.log('Post for movement info.');
+        
+        // collect a move for the body of the response message
+        var body = move("Movement information");
+        res.end(JSON.stringify(body));
 
-    } else {
-        console.log('Oops.');
-        res.end('Oops.');
+    } else if (req.url=='/head.jpg'){
+        console.log('send head');
+        res.end('Send head.');
+    } else
+    {
+        console.log('Error: '+ req.log);
+        res.end('This is a big problem You were doing something weird.');
     }
-    res.end('Hello Node.js Server!');
 }
 
 // start server
