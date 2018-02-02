@@ -5,10 +5,9 @@ var move = require('./app/move');
 // import http
 const http = require('http');
 
-// set port and port message
-var port = 3000;
-//pull port from run command
-if (process.argv.length==3) port = valueOf(process.argv[2]);
+// set port
+var port = process.env.PORT || 80; 
+
 
 // create handler
 const requestHandler = (req, res) => {

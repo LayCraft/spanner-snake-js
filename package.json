@@ -31,6 +31,7 @@
   },
   "homepage": "https://github.com/LayCraft/spanner-snake-js#readme",
   "engines": {
-    "node": "9.4.0"
+    "node": "9.4.0",
+    "npm": "5.6.0"
   }
 }
