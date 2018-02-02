@@ -17,10 +17,10 @@
   "author": "Curtis LayCraft",
   "license": "ISC",
   "devDependencies": {
-    "nodemon": "^1.14.12"
+    "nodemon": "1.14.12"
   },
   "dependencies": {
-    "body-parser": "^1.18.2"
+    "body-parser": "1.18.2"
   },
   "repository": {
     "type": "git",
@@ -29,5 +29,8 @@
   "bugs": {
     "url": "https://github.com/LayCraft/spanner-snake-js/issues"
   },
-  "homepage": "https://github.com/LayCraft/spanner-snake-js#readme"
+  "homepage": "https://github.com/LayCraft/spanner-snake-js#readme",
+  "engines": {
+    "node": "9.4.0"
+  }  
 }
