@@ -10,9 +10,11 @@
   },
   "keywords": [],
   "author": "Curtis LayCraft",
-  "license": "na",
+  "license": "MIT",
   "devDependencies": {
     "nodemon": "^1.14.12"
   },
-  "dependencies": {}
+  "dependencies": {
+    "body-parser": "^1.18.2"
+  }
 }

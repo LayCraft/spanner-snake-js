@@ -1,4 +1,6 @@
-var start = require('./app/start');
+const bodyParser = require('body-parser');
+
+const start = require('./app/start');
 var move = require('./app/move');
 
 // import http
@@ -14,8 +16,7 @@ const requestHandler = (req, res) => {
     console.log("Requested URL:" + req.url);
     if (req.url=='/start') {
         console.log('POST for starter snake info.');
-        var game_id = req;
-        console.log(game_id);
+
         // collect starter information for the body of the response message
         var body = start("Starter information");
         //json encode and send back to user
