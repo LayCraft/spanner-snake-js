@@ -1,6 +1,9 @@
 // move snake
-var getMove = (x) => {
-    return x;
-}
+var getMove = (body) => {
+    return {
+        move: "right",
+        taunt: "Boop the snoot!",
+      }
+    }
 
 module.exports = getMove;

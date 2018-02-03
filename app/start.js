@@ -1,7 +1,8 @@
 // Export a function that delives a snake info payload.
-const getInfo = (x) => {
+const getInfo = (body) => {
     //TEST for getting this info
-    //curl -i -X POST -H "Content-Type: application/json" -d ' { "game_id": "b1dadee8-a112-4e0e-afa2-2845cd1f21aa",s },' localhost:3000/start
+    console.log(body);
+    //curl -i -X POST -H "Content-Type: application/json" -d ' { "game_id": "derp" }' localhost:3000/start
     var snakeInfo = {
         name: 'Spanner Snake',
         color: '#bb2233',
