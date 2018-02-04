@@ -4,11 +4,15 @@ const start = require('./app/start');
 var move = require('./app/move');
 
 // set port
-const PORT = process.env.PORT || 3000; 
+const PORT = process.env.PORT || 3001; 
 
 
 http.createServer((req, res) => {
-    if (req.method !== 'POST') return res.end("A Battlesnake server is required to get useful responses from Spanner Snake. curtis.laycraft@zoho.com"); // non-game requests
+    if (req.method !== 'POST'){
+        console.log("Got a GET request from");
+        return res.end("A Battlesnake server is required to get useful responses from Spanner Snake. curtis.laycraft@zoho.com"); // non-game requests
+    } 
+    console.log("Got a post request from...");
 
     let body = []; //collector for long http
     req.on('data', chunk => body.push(chunk));
