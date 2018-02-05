@@ -1,34 +1,45 @@
-//returns if a space is blocked 
-function setBoardBlocked(blob){
-    let boardBlocked = [];
-    snakeList = blob.snakes;
 
-    for (var i =0; i<snakeList.length; i++){
-        let snake = snakeList[i];
-        // console.log("Snake: "+snake);
-        for (var j=0; i<snake.coords.length; i++){
-            let coordList = snake.coords;
-            // console.log("Coordlist: "+coordList);
-            for (var k=0; k<coordList.length; k++){
-                // console.log("Coordlist item" + coordList[k]);
-                boardBlocked.push(coordList[k]);
-            }
+
+//returns if a space is blocked
+function setBoardGrid(blob){
+    const width = blob.width;
+    const height = blob.height;
+    var board = []; // the final board state
+    
+    // instantiate blank array
+    for (var y = 0; y<height; y++){
+        var row = []; 
+        for (var x = 0; x<width; x++){
+            row.push([0]);
         }
+        board.push(row);
     }
-    console.log(boardBlocked);
-/*{ you: '086b46eb-be81-431e-976c-7650f935cca3',
-  width: 20,
-  turn: 3,
-  snakes:
-   [ { taunt: null,
-       name: 'Spanner Snake',
-       id: '086b46eb-be81-431e-976c-7650f935cca3',
-       health_points: 97,
-       coords: [Array] } ],
-  height: 20,
-  game_id: '086c209d-de89-43ef-b484-9241fe4b4a5e',
-  food: [ [ 14, 9 ] ],
-  dead_snakes: [] }*/
+
+    // placeholder for coordinates collected
+    var items = []; 
+    
+    //types
+    //F == food
+    //H == head
+    //B == blocked
+    //T == threat
+
+    
+
+    //write blocked locations to board
+    const food = blob.food;
+
+    console.log(points);
+
+
+    // for (var i = 0; i < blob.snakes.data.length; i++ ){
+    //     console.log(blob.snakes.data[i].name);
+    //     var t = blob.snakes.data[i].body.data;
+    //     console.log(t);
+    //     t.forEach(element => {
+    //         console.log(element.x +","+element.y);
+    //     })
+    // }
 
 }
 
@@ -44,15 +55,28 @@ function getTargets(){
 n = the distance between the snake and its destination
 */
 function move (n, startPosition, destination, directionTaken){
-    // if direction
+    /*
+    find an unobstructed route to destination
+        return first direction to get there. if there is more than one starting direction to get there then return a random one of them.
+    Route found.
+        return found
+    No route found.
+        Change priority
+    Arrived at target?
+    Arrived at wall?
+    
+    
+    */
     return 'left';
 }
 
 // move snake
 var getMove = (blob) => {  
-    console.log(blob);//write body to terminal
+    // console.log(blob);//write body to terminal
     // console.log(blob.width);
-    setBoardBlocked(blob);
+    setBoardGrid(blob);
+
+    
     //final direction
     // var move;
     //  move = move();
@@ -66,7 +90,7 @@ var getMove = (blob) => {
 
     //var move = move();
     
-    return { move: 'right', taunt: 'ss' }
+    return { move: 'left', taunt: 'ss' }
     }
 
 module.exports = getMove;
