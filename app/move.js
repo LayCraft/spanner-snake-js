@@ -1,6 +1,6 @@
 const buildBoard = require('./build-board');
 const drawBoard = require('./draw-board');
-
+const neighbours = require('./neighbours');
 //returns if a space is blocked
 function setBoardGrid(blob){
 
@@ -63,14 +63,24 @@ var getMove = (blob) => {
     route path to destination
     return first direction in route
 */
-
-
+    // this is a set of priorities x,y,distance,cost
+    
     var move = 'left';
-
+    // returns a board that can be addressed with board[y][x]
+    // also contains f,g,h,visited,closed,parent
     var board = buildBoard(blob.width, blob.height);
-    // Each 
-    // board[2][0].f=3;
-    console.log(board[2][0]);//this is addressed by [y][x]
+    
+    // priority = setPriority(board);
+    
+    //neighbours returns an array of coordinates.
+    console.log(neighbours(board,0,2));
+
+  
+
+
+
+    // board[2][0].f = 3;//test can be addressed and set
+
     // board = setCoords(board, [[1,2],[1,3],[1,4]], 0);
     
     //draw a command line board
