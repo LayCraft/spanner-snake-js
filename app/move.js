@@ -1,6 +1,6 @@
 const buildBoard = require('./build-board');
 const drawBoard = require('./draw-board');
-const setCoords = require('./set-coords')
+
 //returns if a space is blocked
 function setBoardGrid(blob){
 
@@ -64,10 +64,14 @@ var getMove = (blob) => {
     return first direction in route
 */
 
+
     var move = 'left';
-    // board in instantiated to all 1's.
-    var board = buildBoard(blob);
-    board = setCoords(board, [[1,2],[1,3],[1,4]], 0);
+
+    var board = buildBoard(blob.width, blob.height);
+    // Each 
+    // board[2][0].f=3;
+    console.log(board[2][0]);//this is addressed by [y][x]
+    // board = setCoords(board, [[1,2],[1,3],[1,4]], 0);
     
     //draw a command line board
     drawBoard(board);

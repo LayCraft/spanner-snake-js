@@ -5,7 +5,7 @@ const move = require('./app/move');
 
 // set port
 const PORT = process.env.PORT || 3001; 
-
+console.log("Running on port "+ PORT);
 
 http.createServer((req, res) => {
     if (req.method !== 'POST'){

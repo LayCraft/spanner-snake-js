@@ -1,11 +1,14 @@
 var drawBoard = (board) => {
-console.log('-----V--Board--V-----');
-    board.forEach((y)=> {
+    console.log('-------Board-------');
+    let output = [];
+    board.forEach(y => {
         let row = [];
-        y.forEach((x)=> {
-            row.push(x);
+        y.forEach(x => {
+            row.push(x.f);
         });
-        console.log('|'+row+'|');
+        output.push(row);
     });
+    console.log(output);
+    
 }
 module.exports = drawBoard;
