@@ -8,5 +8,4 @@ console.log('-----V--Board--V-----');
         console.log('|'+row+'|');
     });
 }
-
 module.exports = drawBoard;

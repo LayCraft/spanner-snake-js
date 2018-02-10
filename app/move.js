@@ -1,5 +1,6 @@
 const buildBoard = require('./build-board');
 const drawBoard = require('./draw-board');
+const setCoords = require('./set-coords')
 //returns if a space is blocked
 function setBoardGrid(blob){
 
@@ -54,12 +55,25 @@ function setBoardGrid(blob){
 
 // move snake
 var getMove = (blob) => {
+/*  
+    this uses a modified a* algorithm. This means the g value of board spaces is set. G value represents effort. So the head of the snake has 0 effort because it is already there. all other spaces are instantiated at infinity. In this case infinity is represented by 9.
+
+    build board
+    determine destination
+    route path to destination
+    return first direction in route
+*/
+
+    var move = 'left';
+    // board in instantiated to all 1's.
     var board = buildBoard(blob);
+    board = setCoords(board, [[1,2],[1,3],[1,4]], 0);
+    
+    //draw a command line board
     drawBoard(board);
     //final direction
     var move;
-    move = { move: 'left', taunt: 'ss' };
-    return move;
+    return { move: move, taunt: 'ss' };
     }
 
 module.exports = getMove;
