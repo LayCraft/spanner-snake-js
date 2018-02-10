@@ -72,13 +72,8 @@ var getMove = (blob) => {
     
     // priority = setPriority(board);
     
-    //neighbours returns an array of coordinates.
-    console.log(neighbours(board,0,2));
-
-  
-
-
-
+    //neighbours returns an array of coordinates that are othoganal neighbours to the given coordinate
+    // console.log(neighbours(board,[0,2]));//test returns a 2d array of orthoganal nodes
     // board[2][0].f = 3;//test can be addressed and set
 
     // board = setCoords(board, [[1,2],[1,3],[1,4]], 0);
