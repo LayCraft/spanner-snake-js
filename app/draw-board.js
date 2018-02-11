@@ -1,11 +1,9 @@
-var drawBoard = (board) => {
-
-    
+var drawBoard = (board, title) => {
     header = "/";
     for (let i = 0; i<board[0].length; i++){
         header=header+'FGH|';
     }
-    console.log('-------Board-------');
+    console.log(`-------${title}-------`);
     //print header line fgh
     console.log(header);
 
