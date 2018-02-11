@@ -1,7 +1,6 @@
 // Export a function that delives a snake info payload.
 const getInfo = (id) => {
 
-    // console.log("Returning start info");
     //curl -i -X POST -H "Content-Type: application/json" -d ' { "game_id": "derp" }' localhost:3000/start
     var snakeInfo = {
         name: 'Spanner Snake',
@@ -12,6 +11,7 @@ const getInfo = (id) => {
         tail_type: 'round-bum',
         secondary_color: '#bb2200',
     };
+    console.log("Returning start info for "+ snakeInfo.name);
     return snakeInfo;
 }
 

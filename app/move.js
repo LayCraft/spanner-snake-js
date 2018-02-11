@@ -1,6 +1,7 @@
 const buildBoard = require('./build-board');
 const drawBoard = require('./draw-board');
 const neighbours = require('./neighbours');
+const rawDistance = require('./raw-distance');
 //returns if a space is blocked
 function setBoardGrid(blob){
 
@@ -55,33 +56,30 @@ function setBoardGrid(blob){
 
 // move snake
 var getMove = (blob) => {
+    console.log("Returning move for snake "+ blob.you.id);
 /*  
     this uses a modified a* algorithm. This means the g value of board spaces is set. G value represents effort. So the head of the snake has 0 effort because it is already there. all other spaces are instantiated at infinity. In this case infinity is represented by 9.
-
-    build board
-    determine destination
-    route path to destination
-    return first direction in route
 */
+    // console.log(blob);
+    // console.log([blob.you.body.data[0].x, blob.you.body.data[0].y]);//my head
     // this is a set of priorities x,y,distance,cost
     
-    var move = 'left';
+    var move = 'right';
+
     // returns a board that can be addressed with board[y][x]
     // also contains f,g,h,visited,closed,parent
     var board = buildBoard(blob.width, blob.height);
     
     // priority = setPriority(board);
     
-    //neighbours returns an array of coordinates that are othoganal neighbours to the given coordinate
+    // console.log(rawDistance([0,0],[3,2]));//returns 5.
     // console.log(neighbours(board,[0,2]));//test returns a 2d array of orthoganal nodes
     // board[2][0].f = 3;//test can be addressed and set
-
-    // board = setCoords(board, [[1,2],[1,3],[1,4]], 0);
     
     //draw a command line board
     drawBoard(board);
+
     //final direction
-    var move;
     return { move: move, taunt: 'ss' };
     }
 
