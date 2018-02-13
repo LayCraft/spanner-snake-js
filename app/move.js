@@ -63,7 +63,7 @@ var getMove = (blob) => {
     // returns a board that can be addressed with board[y][x]
     // also contains f,g,h,visited,closed,parent
     var board = buildBoard(blob.width, blob.height);
-    var pBoard = populateBoard(board, blob);
+    board = populateBoard(board, blob);
     // priority = setPriority(board);
     
     // console.log(rawDistance([0,0],[3,2]));//returns 5.
@@ -71,8 +71,8 @@ var getMove = (blob) => {
     // board[2][0].f = 3;//test can be addressed and set
     
     //draw a board in the terminal
-    drawBoard(board, 'Normal board');
-    drawBoard(pBoard, 'Populated board');
+    // drawBoard(board, 'Normal board');
+    drawBoard(board, 'Populated board');
     //final direction
     console.log(`Returning ${move}ward move for snake ${blob.you.id}. gj`);
     return { move: move, taunt: 'ssssssss' };

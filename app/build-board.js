@@ -11,6 +11,7 @@ var buildBoard = (width, height) => {
             prop.visited = false;
             prop.closed = false;
             prop.parent = null;
+            prop.contains = " ";
             row.push(prop);
         } 
         board.push(row);

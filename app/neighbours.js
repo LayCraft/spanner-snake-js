@@ -1,10 +1,8 @@
 //neighbours returns an array of coordinates that are othoganal neighbours to the given coordinate
-//board should be a board array of objects
+//height and width are for defining the field of valid points to return
 //node should be a coordinate that looks like [x,y]
-const neighbours = (board, node) => {
+const neighbours = (width, height, node) => {
     // return a list of neighbours
-    height = board.length;
-    width = board[0].length;
     x = node[0];
     y = node[1];
 
