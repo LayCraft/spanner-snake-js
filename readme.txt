@@ -1,0 +1,1 @@
+I got very frustrated with trying to wrangle arrays and switched to python3.6 for more elegance

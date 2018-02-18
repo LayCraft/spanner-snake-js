@@ -3,52 +3,10 @@ const drawBoard = require('./draw-board');
 const neighbours = require('./neighbours');
 const rawDistance = require('./raw-distance');
 const realDistance = require('./real-distance');
+const mostSpace = require('./most-space');
 const priorities = require('./priorities');
 const populateBoard = require('./populate-board');
-//returns if a space is blocked
-function setBoardGrid(blob){
-
-    // placeholder for coordinates collected
-    // keeping these seperate so that they can be added in 
-    var bodies = []; 
-    var heads = [];
-    var myHead = blob.you.body.data;
-    console.log(myHead);
-    var otherSnake = blob.snakes.data
-
-
-    //write blocked locations to board
-    const food = blob.food;
-
-    // console.log(points);
-    for (var i = 0; i < blob.snakes.data.length; i++ ){
-        //collect coordinates
-        var coordinates = blob.snakes.data[i].body.data;      
-        let isHead = true;
-        coordinates.forEach(element => {
-            // console.log(element.x +","+element.y);
-            if(isHead){
-                element.object = 'H';
-                heads.push(element);
-                //head is now identified because it is the first item in the list.
-                isHead = false;
-            } else {
-                element.object = 'B';
-                bodies.push(element);
-            }
-        })
-    }
-    console.log("bodies");
-    bodies.forEach((bork)=>{
-        console.log(bork);
-    });
-    console.log("heads");
-    heads.forEach((bork)=>{
-        console.log(bork);
-    });
-
-}
-
+const inArray = require('./inArray');
 // move snake
 var getMove = (blob) => {
 /*  
@@ -64,10 +22,19 @@ var getMove = (blob) => {
     // also contains f,g,h,visited,closed,parent
     var board = buildBoard(blob.width, blob.height);
     board = populateBoard(board, blob);
-    // priority = setPriority(board);
     
+    // find a target/priority 
+    // var priorityList = priorities(board, blob);
+    // direction with greatest space
+    // move = mostSpace(board, head);
+
+
+    // var distance = rawDistance(head, priorityList[0]);
+    // var direction = realDistance(head, priorityList[0]);
+    // flood fill area
+
+    // console.log("Raw distance: "+distance);
     // console.log(rawDistance([0,0],[3,2]));//returns 5.
-    // console.log(neighbours(board,[0,2]));//test returns a 2d array of orthoganal nodes
     // board[2][0].f = 3;//test can be addressed and set
     
     //draw a board in the terminal

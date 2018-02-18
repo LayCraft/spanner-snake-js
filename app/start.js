@@ -5,7 +5,7 @@ const getInfo = (id) => {
     var snakeInfo = {
         name: 'Spanner Snake',
         color: '#bb2233',
-        head_url: 'https://i.imgur.com/Pw8oNUw.png',
+        head_url: 'http://1.bp.blogspot.com/-OF1YsenmaR0/VUmxLf3arXI/AAAAAAAA5zI/5HBUljkfwm8/s1600/spanner.png',
         taunt: 'Yiss...',
         head_type: 'safe',
         tail_type: 'round-bum',

@@ -18,7 +18,7 @@ http.createServer((req, res) => {
     req.on('data', chunk => body.push(chunk));
     req.on('end', () => {
         body = JSON.parse(Buffer.concat(body).toString());
-        console.log(req.url+ JSON.stringify(body));
+        // console.log(req.url+ JSON.stringify(body));
         if (req.url === '/start'){ 
             message = start(body)
         }
