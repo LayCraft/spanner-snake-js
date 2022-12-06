@@ -18,7 +18,7 @@
   "license": "ISC",
   "devDependencies": {},
   "dependencies": {
-    "body-parser": "1.18.2",
+    "body-parser": "1.20.1",
     "nodemon": "1.14.12"
   },
   "repository": {
